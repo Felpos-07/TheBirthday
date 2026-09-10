@@ -101,6 +101,13 @@ h1 span {
   line-height: 1.5;
 }
 
+.click-counter {
+  margin:8px 0 0;
+  color: var(--coral-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
 .chicken-button {
   position: relative;
   display: block;
