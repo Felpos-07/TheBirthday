@@ -568,3 +568,85 @@ h1 span {
     scroll-behavior: auto !important;
   }
 }
+
+.confetti-explode {
+  z-index: 2;
+  opacity: 1;
+  animation: confetti-explode 1s ease-in-out forwards;
+}
+
+.confetti-one.confetti-explode {
+  --movimento-x: -120px;
+  --movimento-y: 180px;
+}
+
+.confetti-two.confetti-explode {
+  --movimento-x: 120px;
+  --movimento-y: 160px;
+}
+
+.confetti-three.confetti-explode {
+  --movimento-x: 80px;
+  --movimento-y: -180px;
+}
+
+@keyframes confetti-explode {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(var(--movimento-x), var(--movimento-y)) rotate(720deg) scale(0.6);
+  }
+}
+
+.confete-explosao {
+  position: fixed;
+  z-index: 10;
+  top: 45%;
+  left: 50%;
+  width: 9px;
+  height: 18px;
+  background: var(--cor);
+  border-radius: 3px;
+  pointer-events: none;
+  animation: explosao-do-confetes 1.5s ease-out var(--atraso) forwards;
+}
+
+@keyframes explosao-do-confetes {
+  0% {
+    opacity: 1;
+    transform: translate(50%, 50%) rotate(0deg) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(
+      calc(-50% + var(--x)),
+      calc(-50% + var(--y))
+    ) rotate(var(--rotacao)) scale(0.7);
+  }
+}
+
+.chicken-running {
+  animation: chicken-run-away 1.2s ease-in forwards;
+  pointer-events: none;
+}
+
+@keyframes chicken-run-away {
+  0% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+
+  35% {
+    transform: translateX(80px) rotate(8deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(120vw) rotate(25deg);
+  }
+}
